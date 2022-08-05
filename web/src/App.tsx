@@ -9,6 +9,7 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <Header />
       <Home />
+
       <GlobalStyle />
     </ThemeProvider>
   )
