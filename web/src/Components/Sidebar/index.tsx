@@ -1,4 +1,6 @@
 import { useForm } from 'react-hook-form'
+import { format } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 import axios from 'axios'
 import {
   AsideContainer,
@@ -7,21 +9,18 @@ import {
   InputNumber,
   InputSidebar,
 } from './styles'
+import { Card } from '../../@types/card'
 
-interface DataProps {
-  data: object
-  title: string
-  description: string
-  date: string
-  time: number
+interface CardsProps extends Card {
+  handleUpdateAfterSaving: (content: Card['content']) => void
 }
 
-export function Sidebar() {
+export function Sidebar({ handleUpdateAfterSaving }) {
   const { register, handleSubmit, watch, reset } = useForm({
     defaultValues: {
       title: '',
       description: '',
-      date: '',
+      date: new Date(),
       time: 0,
     },
   })
@@ -29,17 +28,21 @@ export function Sidebar() {
   const valueInputs = watch('title')
   const isSubmitDisabled = !valueInputs
 
-  function handleSubmitSave(data: DataProps) {
+  function handleSubmitSave(data: CardsProps['content']) {
+    const publishedDateFormatted = format(data.date, "d 'de' LLLL ", {
+      locale: ptBR,
+    })
     axios
       .post('http://localhost:3001/register', {
         title: data.title,
         description: data.description,
-        date: data.date,
+        date: publishedDateFormatted,
         time: data.time,
       })
-      .then((response) => {
-        console.log(response)
+      .then(() => {
+        handleUpdateAfterSaving()
       })
+
     reset()
   }
 
@@ -47,7 +50,6 @@ export function Sidebar() {
     <AsideContainer>
       <h2>Nova tarefa</h2>
       <FormSidebar onSubmit={handleSubmit(handleSubmitSave)} action="">
-        <label htmlFor="title">Titúlo</label>
         <InputSidebar
           type="text"
           id="title"
@@ -55,7 +57,6 @@ export function Sidebar() {
           {...register('title')}
         />
 
-        <label htmlFor="description">Descrição</label>
         <InputSidebar
           type="text"
           id="description"
@@ -63,10 +64,10 @@ export function Sidebar() {
           {...register('description')}
         />
 
-        <label htmlFor="date">Data</label>
         <InputSidebar
           type="date"
           id="date"
+          placeholder="Descrição"
           {...register('date', { valueAsDate: true })}
         />
 
@@ -74,7 +75,6 @@ export function Sidebar() {
         <InputNumber
           type="number"
           id="time"
-          placeholder="Duração"
           {...register('time', { valueAsNumber: true })}
         />
 

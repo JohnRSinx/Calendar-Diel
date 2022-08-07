@@ -6,6 +6,6 @@ export const ContainerHeader = styled.h1`
   background: ${(props) => props.theme['gray-900']};
   padding: 1rem;
   max-width: 70rem;
-  margin: 0.75rem auto;
+  margin: 0.5rem auto;
   border-radius: 8px;
 `

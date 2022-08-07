@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const AsideContainer = styled.aside`
-  background: ${(props) => props.theme['gray-700']};
+  background: ${(props) => props.theme['gray-900']};
   border-radius: 8px;
   padding: 1rem 0rem;
   h2 {
@@ -13,25 +13,25 @@ export const FormSidebar = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  label {
-    margin-top: 0.25rem;
-  }
 `
 const BaseInput = styled.input`
-  background: transparent;
+  background: ${(props) => props.theme['gray-900']};
   height: 2.5rem;
+
   border: 0;
-  border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+  border-bottom: 2px solid ${(props) => props.theme['purple-500']};
+  border-radius: 2px;
 
   font-size: 1.125rem;
   padding: 0 0.05rem;
+  margin: 0.5rem 0rem;
   color: ${(props) => props.theme['gray-100']};
   &:focus {
     box-shadow: none;
     border-color: ${(props) => props.theme['purple-500']};
   }
   &::placeholder {
-    color: ${(props) => props.theme['gray-500']};
+    color: ${(props) => props.theme['gray-100']};
   }
 `
 export const InputSidebar = styled(BaseInput)`
@@ -42,7 +42,7 @@ export const InputNumber = styled(BaseInput)`
 `
 
 export const ButtonSidebar = styled.button`
-  width: 50%;
+  width: 80%;
   border: 0;
   padding: 1rem;
   border-radius: 8px;
