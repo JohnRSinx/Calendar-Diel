@@ -3,7 +3,7 @@
 </h3>
 
 <h1 align="center">
-    <img alt="Home do Calendário" title="#Home do Calendário" src="./.github/home.png" />
+    <img alt="Home do Calendário" title="#Home do Calendário" src="./.github/home.PNG" />
 </h1>
 
 
