@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 
-export const AsideContainer = styled.aside`
+export const Container = styled.aside`
   background: ${(props) => props.theme['gray-900']};
   border-radius: 8px;
   padding: 1rem 0rem;
+  flex: 1;
+  height: 100%;
+
   h2 {
     text-align: center;
   }
@@ -44,7 +47,7 @@ export const InputNumber = styled(BaseInput)`
 export const ButtonSidebar = styled.button`
   width: 80%;
   border: 0;
-  padding: 1rem;
+  padding: 1rem 0rem;
   border-radius: 8px;
   margin-top: 1rem;
 

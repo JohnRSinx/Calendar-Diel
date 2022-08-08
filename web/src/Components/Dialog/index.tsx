@@ -2,12 +2,12 @@ import Modal from 'react-modal'
 import axios from 'axios'
 import { FormEvent, useState, ChangeEvent } from 'react'
 import { ModalContainer } from './styles'
-import type { Card } from '../../@types/card'
+import type { ICard } from '../../@types/card'
 
 interface DialogProps {
   isOpen: boolean
   onRequestClose: () => void
-  content: Card['content']
+  content: ICard
   handleUpdateAfterEdit: () => void
 }
 

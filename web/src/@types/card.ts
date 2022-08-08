@@ -1,11 +1,7 @@
-type CardContent = {
+export interface ICard {
   id: string
   title: string
   description: string
-  date: string
+  date: Date
   time: number
-}
-
-export interface Card {
-  content: CardContent
 }

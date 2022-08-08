@@ -1,21 +1,27 @@
-import { useForm } from 'react-hook-form'
-import { format } from 'date-fns'
-import ptBR from 'date-fns/locale/pt-BR'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 import {
-  AsideContainer,
+  Container,
   ButtonSidebar,
   FormSidebar,
   InputNumber,
   InputSidebar,
 } from './styles'
-import { Card } from '../../@types/card'
+import { format } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
-interface CardsProps extends Card {
-  handleUpdateAfterSaving: (content: Card['content']) => void
+interface SidebarProps {
+  handleUpdateAfterSaving: () => void
 }
 
-export function Sidebar({ handleUpdateAfterSaving }) {
+type FormValues = {
+  title: string
+  description: string
+  date: Date
+  time: number
+}
+
+export function Sidebar({ handleUpdateAfterSaving }: SidebarProps) {
   const { register, handleSubmit, watch, reset } = useForm({
     defaultValues: {
       title: '',
@@ -28,7 +34,7 @@ export function Sidebar({ handleUpdateAfterSaving }) {
   const valueInputs = watch('title')
   const isSubmitDisabled = !valueInputs
 
-  function handleSubmitSave(data: CardsProps['content']) {
+  const handleSubmitSave: SubmitHandler<FormValues> = (data) => {
     const publishedDateFormatted = format(data.date, "d 'de' LLLL ", {
       locale: ptBR,
     })
@@ -47,9 +53,9 @@ export function Sidebar({ handleUpdateAfterSaving }) {
   }
 
   return (
-    <AsideContainer>
+    <Container>
       <h2>Nova tarefa</h2>
-      <FormSidebar onSubmit={handleSubmit(handleSubmitSave)} action="">
+      <FormSidebar onSubmit={handleSubmit(handleSubmitSave)}>
         <InputSidebar
           type="text"
           id="title"
@@ -82,6 +88,6 @@ export function Sidebar({ handleUpdateAfterSaving }) {
           Adicionar
         </ButtonSidebar>
       </FormSidebar>
-    </AsideContainer>
+    </Container>
   )
 }

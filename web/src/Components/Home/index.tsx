@@ -1,26 +1,21 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Card } from '../../@types/card'
-import { Cards } from '../Cards'
+import { ICard } from '../../@types/card'
+import { Calendar } from '../Calendar'
+import { Card } from '../Card'
 import { Sidebar } from '../Sidebar'
-import { SearchAndCardContainer, HomeContainer } from './styles'
+import { SearchAndCardContainer, SearchContainer, Container } from './styles'
 
 export function Home() {
-  const [listCard, setListCard] = useState<Card['content'][]>([])
+  const [listCard, setListCard] = useState<ICard[]>([])
   const [search, setSearch] = useState('')
 
-  function handleUpdateAfterEdit() {
+  function getCards() {
     axios.get('http://localhost:3001/getCards').then((response) => {
       setListCard(response.data)
     })
   }
-
   function handleUpdateAfterSaving() {
-    axios.get('http://localhost:3001/getCards').then((response) => {
-      setListCard(response.data)
-    })
-  }
-  function handleUpdateAfterDeleting() {
     axios.get('http://localhost:3001/getCards').then((response) => {
       setListCard(response.data)
     })
@@ -37,51 +32,29 @@ export function Home() {
       : []
 
   return (
-    <HomeContainer>
-      <div className="containerSideBar">
-        <Sidebar handleUpdateAfterSaving={handleUpdateAfterSaving} />
-      </div>
+    <Container>
+      <Sidebar handleUpdateAfterSaving={handleUpdateAfterSaving} />
       <SearchAndCardContainer>
-        <div className="ContainerSearch">
-          <form action="">
-            <label htmlFor="search">Pesquise Tarefas</label>
-            <input
-              id="search"
-              type="search"
-              aria-label="Campo de pesquisa"
-              placeholder="Digite Titulo da Tarefa"
-              onChange={(e) => setSearch(e.target.value)}
-            />
-            <button type="submit">Pesquisar</button>
-          </form>
-        </div>
-        <div className="containerCards">
-          {search.length > 0
-            ? filteredCard.map((value) => {
-                return (
-                  <Cards
-                    key={value.id}
-                    content={value}
-                    handleUpdateAfterEdit={handleUpdateAfterEdit}
-                    handleUpdateAfterDeleting={handleUpdateAfterDeleting}
-                  />
-                )
-              })
-            : listCard.map((value) => {
-                return (
-                  <Cards
-                    key={value.id}
-                    content={value}
-                    handleUpdateAfterEdit={handleUpdateAfterEdit}
-                    handleUpdateAfterDeleting={handleUpdateAfterDeleting}
-                  />
-                )
-              })}
-        </div>
+        <SearchContainer>
+          <label htmlFor="search">Pesquise Tarefas</label>
+          <input
+            id="search"
+            type="search"
+            aria-label="Campo de pesquisa"
+            placeholder="Digite Titulo da Tarefa"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button type="submit">Pesquisar</button>
+        </SearchContainer>
+        {search.length > 0
+          ? filteredCard.map((value) => {
+              return <Card key={value.id} content={value} getCards={getCards} />
+            })
+          : listCard.map((value) => {
+              return <Card key={value.id} content={value} getCards={getCards} />
+            })}
       </SearchAndCardContainer>
-      <div className="containerCalendar">
-        <h1>Calendário</h1>
-      </div>
-    </HomeContainer>
+      <Calendar />
+    </Container>
   )
 }

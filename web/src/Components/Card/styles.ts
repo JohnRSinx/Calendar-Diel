@@ -1,21 +1,20 @@
 import styled from 'styled-components'
 
-export const CardsContainer = styled.article`
+export const Container = styled.article`
   background: ${(props) => props.theme['gray-900']};
   border-radius: 8px;
-
+  width: 100%;
   align-items: center;
   margin-top: 1rem;
   padding: 1rem 1rem;
 
   @media (max-width: 768px) {
-     {
-      padding: 1rem 5rem;
-    }
+    padding: 1rem 5rem;
+    width: 100%;
   }
-
   p {
     font-weight: 700;
+    color: ${({ theme }) => theme['gray-400']};
   }
 `
 

@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 :focus {
-  outline:0;
   box-shadow: 0  0 0 2px ${(props) => props.theme['blue-800']};
 }
 body {
@@ -19,7 +18,6 @@ body , input , textarea, button {
   font-weight: 400;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
-  
 }
 
 .react-modal-overlay{

@@ -1,5 +1,5 @@
-import { ContainerHeader } from './styles'
+import { Container } from './styles'
 
 export function Header() {
-  return <ContainerHeader>Calendário</ContainerHeader>
+  return <Container>Calendário</Container>
 }
