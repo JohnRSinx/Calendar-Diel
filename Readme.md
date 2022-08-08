@@ -18,7 +18,7 @@
   <img
   alt="Home do Calendário"
   title="Home do Calendário"
-  src="./.github/home.png"
+  src="./.github/home.PNG"
   width="650px"/>
 </p>
 
@@ -27,35 +27,35 @@
   <img
   alt="Home do Calendário"
   title="Home do Calendário""
-  src="./.github/cardadd.png"
+  src="./.github/cardadd.PNG"
   width="650px"/>
 </p>
 <p align="center" >
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
- src="./.github/modal.png"
+ src="./.github/modal.PNG"
  width="650px"/>
 </p>
 <p align="center" >
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
- src="./.github/edition.png"
+ src="./.github/edition.PNG"
  width="650px"/>
 </p>
 <p align="center" >
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
- src="./.github/search.png"
+ src="./.github/search.PNG"
  width="650px"/>
 </p>
 <p align="center" >
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
- src="./.github/delete.png"
+ src="./.github/delete.PNG"
  width="650px"/>
 </p>
 
