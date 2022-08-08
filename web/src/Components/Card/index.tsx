@@ -48,7 +48,10 @@ export function Card({ content, getCards }: CardsProps) {
         <div>
           <p>{content.description}</p>
           <p>{content.date}</p>
-          <p>{content.time} </p>
+          <p>
+            {content.time}
+            <span> Minutos</span>
+          </p>
         </div>
       </Container>
       <Dialog

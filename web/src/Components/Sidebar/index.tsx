@@ -77,7 +77,7 @@ export function Sidebar({ handleUpdateAfterSaving }: SidebarProps) {
           {...register('date', { valueAsDate: true })}
         />
 
-        <label htmlFor="time">Tempo</label>
+        <label htmlFor="time">Tempo de Duração</label>
         <InputNumber
           type="number"
           id="time"

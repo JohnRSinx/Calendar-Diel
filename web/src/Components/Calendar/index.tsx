@@ -19,12 +19,10 @@ export function Calendar() {
   const date = new Date()
   const firstDay = date.getDate() - date.getDay()
 
-  const dayWeek = date.getDay()
   const day = date.getDate()
   const month = date.getMonth()
   const year = date.getFullYear()
   const nameMonth = namesMonth[month]
-  // const week = namesWeek[dayWeek]
 
   function getWeeks() {
     const listWeek = []

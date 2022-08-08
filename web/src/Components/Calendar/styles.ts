@@ -10,9 +10,6 @@ export const Container = styled.div`
   h1 {
     border-radius: 8px;
     padding: 1rem;
-    :hover {
-      background: ${(props) => props.theme['blue-800']};
-    }
   }
 
   ul {
@@ -25,15 +22,9 @@ export const Container = styled.div`
     width: 100%;
     padding: 1rem;
     border-radius: 8px;
-    :hover {
-      background: ${(props) => props.theme['blue-800']};
-    }
   }
   li.today {
     background: ${(props) => props.theme['purple-500']};
-    :hover {
-      background: ${(props) => props.theme['purple-700']};
-    }
   }
   span {
     display: flex;
