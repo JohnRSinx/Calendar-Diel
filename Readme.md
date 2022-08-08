@@ -23,7 +23,7 @@
 </p>
 
 <p align="center" >
-- Adicionando Tarefa
+- Um Calendário onde o usuário pode adicionar tarefas , editar , deletar ou pesquisar por elas.
   <img
   alt="Home do Calendário"
   title="Home do Calendário""
@@ -31,7 +31,6 @@
   width="650px"/>
 </p>
 <p align="center" >
-- Editando Tarefa
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
@@ -39,7 +38,6 @@
  width="650px"/>
 </p>
 <p align="center" >
-- Tarefa Editada para Estudo
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
@@ -47,7 +45,6 @@
  width="650px"/>
 </p>
 <p align="center" >
-- Pesquisando Tarefa
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
@@ -55,7 +52,6 @@
  width="650px"/>
 </p>
 <p align="center" >
-- Deletando Tarefa
   <img
   alt="Home do Calendário"
  title="Home do Calendário"
