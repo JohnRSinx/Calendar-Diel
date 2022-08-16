@@ -30,6 +30,7 @@
   src="./.github/cardadd.PNG"
   width="650px"/>
 </p>
+
 <p align="center" >
   <img
   alt="Home do Calendário"
@@ -37,6 +38,7 @@
  src="./.github/modal.PNG"
  width="650px"/>
 </p>
+
 <p align="center" >
   <img
   alt="Home do Calendário"
@@ -44,6 +46,7 @@
  src="./.github/edition.PNG"
  width="650px"/>
 </p>
+
 <p align="center" >
   <img
   alt="Home do Calendário"
@@ -51,6 +54,7 @@
  src="./.github/search.PNG"
  width="650px"/>
 </p>
+
 <p align="center" >
   <img
   alt="Home do Calendário"

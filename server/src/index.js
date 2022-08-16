@@ -8,11 +8,13 @@ const db = mysql.createPool(env.connection)
 app.use(cors());
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  let sql = "INSERT INTO task (title, description, date, time) VALUES('estudos','react', '2017-12-12' ,'12')";
 
-  db.query(sql, (err, result) => {
-    console.log(err);
+app.get("/getCards",( _ , res)=>{
+  let sql = "SELECT * FROM task";
+
+  db.query(sql,(err,result)=>{
+    if(err) console.error(err)
+    else res.status(200).send(result);
   })
 })
 
@@ -26,14 +28,6 @@ app.post("/register", (req, res) => {
   res.status(201).send('user cadastrado');
 })
 
-app.get("/getCards",( _ , res)=>{
-  let SQL = "SELECT * FROM task";
-
-  db.query(SQL,(err,result)=>{
-    if(err) console.log(err)
-    else res.status(200).send(result);
-  })
-})
 
 app.put("/edit",(req , res)=>{
   const {id,title,description,date,time} = req.body;

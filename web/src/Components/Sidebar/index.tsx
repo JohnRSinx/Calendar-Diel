@@ -48,7 +48,6 @@ export function Sidebar({ handleUpdateAfterSaving }: SidebarProps) {
       .then(() => {
         handleUpdateAfterSaving()
       })
-
     reset()
   }
 

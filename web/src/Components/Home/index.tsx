@@ -10,20 +10,20 @@ export function Home() {
   const [listCard, setListCard] = useState<ICard[]>([])
   const [search, setSearch] = useState('')
 
-  function getCards() {
+  function getCardAPI() {
     axios.get('http://localhost:3001/getCards').then((response) => {
       setListCard(response.data)
     })
+  }
+
+  function getCards() {
+    getCardAPI()
   }
   function handleUpdateAfterSaving() {
-    axios.get('http://localhost:3001/getCards').then((response) => {
-      setListCard(response.data)
-    })
+    getCardAPI()
   }
   useEffect(() => {
-    axios.get('http://localhost:3001/getCards').then((response) => {
-      setListCard(response.data)
-    })
+    getCardAPI()
   }, [])
 
   const filteredCard =
