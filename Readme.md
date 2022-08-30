@@ -14,7 +14,7 @@
 
 
 <p align="center" >
-- Aplicação feita para  o processo  seletivo para  estágio na Diel
+- Aplicação feita para um processo  seletivo.
   <img
   alt="Home do Calendário"
   title="Home do Calendário"
